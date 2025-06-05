@@ -1,0 +1,102 @@
+{
+  "save_version": "1.0",
+  "description": "通用保存系统配置示例",
+  "objects": {
+    "Player": {
+      "node_group": "player",
+      "node_name": "Player",
+      "description": "玩家角色",
+      "properties": [
+        {
+          "name": "position",
+          "path": "global_position",
+          "type": "Vector2",
+          "description": "玩家位置"
+        },
+        {
+          "name": "facing_left",
+          "path": "get_child(0).flip_h",
+          "type": "bool",
+          "description": "玩家朝向"
+        },
+        {
+          "name": "health",
+          "path": "health",
+          "type": "int",
+          "description": "玩家生命值"
+        }
+      ]
+    },
+    "Enemy": {
+      "node_group": "enemies",
+      "scene_path": "res://Enemy.tscn",
+      "is_dynamic": true,
+      "description": "敌人对象（动态创建）",
+      "properties": [
+        {
+          "name": "position",
+          "path": "global_position",
+          "type": "Vector2",
+          "description": "敌人位置"
+        },
+        {
+          "name": "health",
+          "path": "health",
+          "type": "int",
+          "description": "敌人生命值"
+        },
+        {
+          "name": "patrol_range",
+          "path": "patrol_range",
+          "type": "float",
+          "description": "巡逻范围"
+        }
+      ]
+    },
+    "Collectible": {
+      "node_group": "collectibles",
+      "scene_path": "res://Collectible.tscn",
+      "is_dynamic": true,
+      "description": "收集品（动态创建）",
+      "properties": [
+        {
+          "name": "position",
+          "path": "global_position",
+          "type": "Vector2",
+          "description": "收集品位置"
+        },
+        {
+          "name": "item_id",
+          "path": "item_id",
+          "type": "String",
+          "description": "物品ID"
+        },
+        {
+          "name": "is_collected",
+          "path": "is_collected",
+          "type": "bool",
+          "description": "是否已收集"
+        }
+      ]
+    },
+    "Door": {
+      "node_group": "interactive",
+      "node_name": "Door",
+      "description": "门对象（静态）",
+      "properties": [
+        {
+          "name": "is_open",
+          "path": "is_open",
+          "type": "bool",
+          "description": "门是否打开"
+        },
+        {
+          "name": "key_required",
+          "path": "key_required",
+          "type": "String",
+          "description": "需要的钥匙"
+        }
+      ]
+    }
+  }
+}
